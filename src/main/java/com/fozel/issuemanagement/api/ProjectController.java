@@ -25,7 +25,6 @@ public class ProjectController {
         ProjectDto p= projectServiceImpl.save(projectDto);
         return ResponseEntity.ok(p);
     }
-    //@RequestMapping(path = "/update", method = RequestMethod.PUT)
     @PutMapping("/{id}")
     public ResponseEntity<ProjectDto> updateProject(@PathVariable(value = "id",required = true) Long id,@Valid @RequestBody ProjectDto projectDto){
         ProjectDto p= projectServiceImpl.update(id,projectDto);
